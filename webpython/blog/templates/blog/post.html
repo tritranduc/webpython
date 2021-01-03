@@ -1,0 +1,19 @@
+{% extends "pages/base.html" %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+<h3><a href="/redirect?Id=AowXW6GamzKEfhgo%2f2TLKjERqDpbWoXjWVP4OrGyoBU%3d">{{post.title}}</a></h3>
+<h6>on {{post.date}}</h6>
+{{post.body|safe|linebreaks}}
+{% endblock %}
+{% extends "pages/base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+{% for post in Posts %}
+    <h4>{{post.date|date:"d-m-Y"}}<a href="/redirect?Id=bPkSKQqMZ9erlLi6p21Q4A%3d%3d" url 'post' post.id %}">{{post.title}}</a></h4>
+    <img src="{{post.image.url}}" width="500px" height="300px" />
+{% endfor %}
+{% endblock %}
